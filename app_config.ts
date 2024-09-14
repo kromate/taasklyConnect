@@ -19,38 +19,38 @@ export default {
             },
             {
                 name: 'title',
-                content: 'Bookings - Simplified Bookings, Amplified Business'
+                content: 'Connect - Simplified CRM, Amplified Business'
             },
             {
                 name: 'description',
-                content: 'Create personalized booking pages, manage appointments effortlessly, and get paid seamlessly. Tailored for African entrepreneurs, perfect for everyone.'
+                content: `Streamline your customer relationships, manage interactions effortlessly, and grow your business with Taaskly Connect. Designed for modern entrepreneurs, it's the perfect tool for everyone.`
             },
             {
                 name: 'twitter:title',
-                content: 'Bookings - Simplified Bookings, Amplified Business'
+                content: 'Connect - Simplified CRM, Amplified Business' 
             },
-            { name: 'twitter:image', content: 'https://bookings.taaskly.site/og2.png' },
+            { name: 'twitter:image', content: 'https://connect.taaskly.site/og2.png' },
             {
                 name: 'twitter:description',
-                content: 'Create personalized booking pages, manage appointments effortlessly, and get paid seamlessly. Tailored for African entrepreneurs, perfect for everyone.'
+                content: `Streamline your customer relationships, manage interactions effortlessly, and grow your business with Taaskly Connect. Designed for modern entrepreneurs, it's the perfect tool for everyone.`
             },
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:site', content: '@kromate_24' },
             { name: 'twitter:creator', content: '@kromate_24' },
             {
                 property: 'og:title',
-                content: 'Bookings | Simplified Bookings, Amplified Business'
+                content: 'Connect | Simplified CRM, Amplified Business'
             },
             { name: 'google-site-verification', content: 'tWttF6w3RHPlNPm5u7KSRgh4lgkRUZ2Bwl6QzECjY18' },
             { property: 'og:type', content: 'website' },
-            { property: 'og:url', content: 'https://bookings.taaskly.site/' },
-            { property: 'og:image', content: 'https://bookings.taaskly.site/og2.png' },
-            { property: 'og:image:secure_url', content: 'https://bookings.taaskly.site/og2.png' },
+            { property: 'og:url', content: 'https://connect.taaskly.site/' },
+            { property: 'og:image', content: 'https://connect.taaskly.site/og2.png' },
+            { property: 'og:image:secure_url', content: 'https://connect.taaskly.site/og2.png' },
             { property: 'og:image:type', content: 'image/png' },
-            { property: 'og:site_name', content: 'Bookings' },
+            { property: 'og:site_name', content: 'Connect' },
             {
                 property: 'og:description',
-                content: 'Create personalized booking pages, manage appointments effortlessly, and get paid seamlessly. Tailored for African entrepreneurs, perfect for everyone.'
+                content: `Streamline your customer relationships, manage interactions effortlessly, and grow your business with Taaskly Connect. Designed for modern entrepreneurs, it's the perfect tool for everyone.`
             },
 
             { name: 'format-detection', content: 'telephone=no' }
