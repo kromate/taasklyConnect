@@ -1,4 +1,4 @@
-import { useModal } from '../modal'
+import { modal } from '../modal'
 
 // ==================== AUTH ===============================
 import Logout from '@/components/modals/auth/logout.vue'
@@ -7,8 +7,7 @@ import Logout from '@/components/modals/auth/logout.vue'
 import Confirmation from '@/components/modals/core/Confirmation.vue'
 import LoadingVerification from '@/components/modals/core/loading.vue'
 
-// ==================== WALLET ===============================
-import SendMoney from '@/components/modals/wallets/BankTransfer/index.vue'
+
 
 // ==================== BOTTOMBAR ===============================
 import BottomMenu from '@/components/layouts/bottomBar/modal/Main.vue'
@@ -18,21 +17,18 @@ import BottomMenu from '@/components/layouts/bottomBar/modal/Main.vue'
 
 type AuthTypes = 'Logout'
 type CoreTypes = 'Confirmation' | 'LoadingVerification'
-type WalletTypes = 'SendMoney'
 type BottombarTypes = 'BottomMenu'
 
 
-const AuthModals = { Logout } as Record<AuthTypes, any>
+const AuthModals = { Logout} as Record<AuthTypes, any>
 const CoreModals = { Confirmation, LoadingVerification } as Record<CoreTypes, any>
-const WalletModals = { SendMoney } as Record<WalletTypes, any>
 const BottombarModals = { BottomMenu } as Record<BottombarTypes, any>
 
 
 
-export const modal = useModal()
+
 const authModal = modal.register('Auth', AuthModals)
 const coreModal = modal.register('Core', CoreModals)
-const walletModal = modal.register('Wallet', WalletModals)
 const bottombarModal = modal.register('Bottombar', BottombarModals)
 
 
@@ -41,7 +37,6 @@ const bottombarModal = modal.register('Bottombar', BottombarModals)
 
 export const useAuthModal = () => authModal
 export const useCoreModal = () => coreModal
-export const useWalletModal = () => walletModal
 export const useBottombarModal = () => bottombarModal
 
 

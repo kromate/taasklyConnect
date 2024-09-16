@@ -46,7 +46,7 @@
 
 import { PropType } from 'vue'
 import { X } from 'lucide-vue-next'
-import { modal } from '@/composables/core/modals'
+import { modal } from '@/composables/core/modal'
 
 import { modalType, closeModalType, closeAllExtremes } from '@/composables/core/modal'
 

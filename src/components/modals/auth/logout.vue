@@ -5,22 +5,22 @@
 		:is-full-height="false"
 	>
 		<p class="text-dark text-lg tracking-[0.1rem] text-center">
-			Are you sure you want to sign out?
+			Are you sure you want to sign out? s
 		</p>
 
 		<div class="flex flex-col mt-5">
 			<button class="modal-btn border-red bg-red text-white hover:bg-red" @click="signOut">
 				Logout
 			</button>
-			<button class="modal-btn text-dark mt-3" @click="useAuthModal().closeLogout()">
+			<!-- <button class="modal-btn text-dark mt-3" @click="useAuthModal().closeLogout()">
 				Cancel
-			</button>
+			</button> -->
 		</div>
 	</Modal>
 </template>
 
 <script setup lang="ts">
-import { useAuthModal } from '@/composables/core/modals'
+// import { useAuthModal } from '@/composables/core/modals'
 import { useSignin } from '@/composables/auth/auth'
 import Modal from '@/components/core/modal/Modal.vue'
 

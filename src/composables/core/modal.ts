@@ -17,7 +17,7 @@ export const closeAllExtremes = () => {
     modalType.value = null
 }
 
-export const useModal = () => {
+const useModal = () => {
     const modals = {}
 
     const open = (id: string) => {
@@ -52,3 +52,5 @@ export const useModal = () => {
 
     return { stack, modals, open, close, register, closeAllExtremes }
 }
+
+export const modal = useModal()

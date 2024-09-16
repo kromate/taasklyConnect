@@ -1,7 +1,7 @@
 import { useShare, useClipboard } from '@vueuse/core'
 import { CopyToClipboardCopyDataType, shareDataType } from './types/share'
 import { useAlert } from '@/composables/core/notification'
-// import { useCoreModal } from '@/composables/core/modals'
+import { useCoreModal } from '@/composables/core/modals'
 
 
 const { share, isSupported } = useShare()
