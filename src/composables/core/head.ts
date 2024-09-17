@@ -16,7 +16,7 @@ export const useCustomHead = ({ title, desc, img }:CustomHeadTypes) => {
       },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@taaskly' },
-      { name: 'twitter:title', content: title ?? 'Taaskly | Your one stop destination for all your business needs' },
+      { name: 'twitter:title', content: title ?? 'Connect | CRM tool for everyone' },
       {
         name: 'twitter:description',
         content:
@@ -24,10 +24,10 @@ export const useCustomHead = ({ title, desc, img }:CustomHeadTypes) => {
       },
       { name: 'twitter:image', content: img ?? 'https://www.taaskly.xyz/og.png' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:title', content: title ?? 'Taaskly | Your one stop destination for all your business needs' },
-      { property: 'og:url', content: 'https://taaskly.xyz/' },
-      { property: 'og:image', content: img ?? 'https://www.taaskly.xyz/og.png' },
-      { property: 'og:image:secure_url', content: img ?? 'https://www.taaskly.xyz/og.png' },
+      { property: 'og:title', content: title ?? 'Connect | CRM tool for everyone' },
+      { property: 'og:url', content: 'https://taaskly.site/' },
+      { property: 'og:image', content: img ?? 'https://www.taaskly.site/og.png' },
+      { property: 'og:image:secure_url', content: img ?? 'https://www.taaskly.site/og.png' },
       { property: 'og:image:type', content: 'image/png' },
       {
         property: 'og:description',
@@ -43,19 +43,19 @@ export const setCustomHead = ({ title, desc, img }: CustomHeadTypes) => {
   if (process.server) return
     document.title = title
     const metaTags = [
-      { name: 'description', content: desc ?? 'Bookings simplified with Taaskly Bookings' },
+      { name: 'description', content: desc ?? 'Connect | CRM tool for everyone' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@taaskly' },
-      { name: 'twitter:title', content: title ?? 'Taaskly | Bookings simplified, business amplified' },
-      { name: 'twitter:description', content: desc ?? 'Bookings simplified with Taaskly Bookings' },
+      { name: 'twitter:title', content: title ?? 'Connect | CRM tool for everyone' },
+      { name: 'twitter:description', content: desc ?? 'Connect | CRM tool for everyone' },
       { name: 'twitter:image', content: img ?? 'https://www.taaskly.xyz/og.png' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:title', content: title ?? 'Taaskly | Bookings simplified, business amplified' },
+      { property: 'og:title', content: title ?? 'Connect | CRM tool for everyone' },
       { property: 'og:url', content: 'https://taaskly.xyz/' },
       { property: 'og:image', content: img ?? 'https://www.taaskly.xyz/og.png' },
       { property: 'og:image:secure_url', content: img ?? 'https://www.taaskly.xyz/og.png' },
       { property: 'og:image:type', content: 'image/png' },
-      { property: 'og:description', content: desc ?? 'Bookings simplified with Taaskly Bookings' }
+      { property: 'og:description', content: desc ?? 'Connect | CRM tool for everyone' }
     ]
 
     metaTags.forEach((tag) => {

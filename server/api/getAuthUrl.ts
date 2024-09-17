@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
   const oauth2Client = new OAuth2Client(clientId, clientSecret, redirectUri)
 
   // Set the scopes for Google Calendar API
-  const scopes = ['https://www.googleapis.com/auth/calendar', 'email', 'profile', 'openid']
+  const scopes = ['https://www.googleapis.com/auth/contacts', 'email', 'profile', 'openid']
 
   // Generate the authorization URL
   const authUrl = oauth2Client.generateAuthUrl({

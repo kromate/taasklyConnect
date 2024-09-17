@@ -1,27 +1,14 @@
 <template>
-	<transition
-		name="fade"
-		appear
-		@after-enter="modalType = type"
-	>
-		<div
-			:close="closeModal"
-			:class="[
-				type == 'popup' ? 'bg-modal' : 'bg-sidebar',
-				'transition-all modal-background',
-			]"
-			@click.self="autoClose ? close($el) : null"
-		>
+	<transition name="fade" appear @after-enter="modalType = type">
+		<div :close="closeModal" :class="[
+			type == 'popup' ? 'bg-modal' : 'bg-sidebar',
+			'transition-all modal-background',
+		]" @click.self="autoClose ? close($el) : null">
 			<transition name="modal" appear @after-leave="closeModal">
-				<div v-if="modalType == 'popup'" :class="[isFullHeight? `isFullHeight ${computedWidth}`:'isNotFullHeight','modal']">
+				<div v-if="modalType == 'popup'" :class="[isFullHeight ? `isFullHeight ${computedWidth}` : 'isNotFullHeight', 'modal']">
 					<header class="modal-title flex justify-between w-full items-center">
-						<span :class="[noClose?'text-center w-full':'text-start', 'text-xl md:text-2xl']">{{ title }}</span>
-						<X
-							v-if="!noClose"
-							name="close"
-							class="text-dark w-7 cursor-pointer  border-[1.5px] border-dark rounded-md"
-							@click="closeBtnPressed()"
-						/>
+						<span :class="[noClose ? 'text-center w-full' : 'text-start', 'text-xl md:text-2xl']">{{ title }}</span>
+						<X v-if="!noClose" name="close" class="text-dark w-7 cursor-pointer  border-[1.5px] border-dark rounded-md" @click="closeBtnPressed()" />
 					</header>
 					<div class="w-full relative">
 						<slot />
@@ -56,7 +43,7 @@ watch(() => useRoute().path, (from, to) => {
 })
 const emit = defineEmits(['close'])
 type modalTypes = 'popup' | 'sidebar' | 'bottom_bar';
-type sizeTypes = 'sm' | 'md' | 'lg' | 'xl' | 'xxl'| 'full';
+type sizeTypes = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'full';
 
 const computedWidth = computed(() => {
 	switch (props.size) {
@@ -139,67 +126,69 @@ const closeBtnPressed = () => {
 }
 </script>
 
-<style scoped lang="scss">
-    .bottombar {
-        @apply bg-light rounded-t-xl flex flex-col gap-2 sm:hidden fixed inset-x-0 bottom-[54px] w-full border border-dark p-4 pb-0 pt-6;
-    }
-.generator_tw{
-	@apply sm:w-[700px] sm:w-[400px]
+<style scoped>
+.sidebar {
+	@apply fixed inset-y-0 right-0 h-screen z-[100] bg-light;
+	box-shadow: 5px 0 20px 2px rgb(0 0 0 / 20%);
 }
+
+.bottombar {
+	@apply bg-light rounded-t-xl flex flex-col gap-2 sm:hidden fixed inset-x-0 bottom-0 w-full border border-dark p-4 pb-0 pt-6;
+}
+
+.generator_tw {
+	@apply sm:w-[400px];
+}
+
 .isFullHeight {
-	@apply h-screen sm:h-auto
+	@apply h-screen sm:h-auto;
 }
-.isNotFullHeight{
-	@apply h-auto w-[90vw] sm:w-[470px] rounded-sm;
-	border-radius: 0.375rem;
-	height: auto !important;
+
+.isNotFullHeight {
+	@apply h-auto w-[90vw] sm:w-[470px] rounded-md;
 }
 
 .bg-sidebar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.4);
-	width: 100vw;
-	max-width: 100vw;
-	min-height: 100vh;
-	z-index: 30;
-	backdrop-filter: blur(1.5px);
+	@apply fixed top-0 left-0 bg-black bg-opacity-50 w-screen max-w-full min-h-full z-[100] backdrop-blur-[1.5px];
 }
 
 .modal-enter-active,
 .modal-leave-active {
-	transition: all 0.23s linear;
-}
-.modal-enter-from,
-.modal-leave-to {
-	opacity: 0;
-	@media screen and (max-width: 640px) {
-		transform: translateY(500px);
-	}
-}
-.slide-enter-active,
-.slide-leave-active {
-	transition: all 0.25s ease;
-}
-.slide-enter-from,
-.slide-leave-to {
-	transform: translateX(-500px);
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
+	@apply transition-all duration-[0.23s] ease-linear;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: 0.125s opacity ease-out;
+.modal-enter-from,
+.modal-leave-to {
+	@apply opacity-0 sm:translate-y-[500px];
 }
+
+.slide-enter-active,
+.slide-leave-active {
+	@apply transition-all duration-[0.2s] ease-in-out;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+	@apply translate-x-[500px];
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	@apply opacity-0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	@apply transition-opacity duration-[0.2s] ease-out;
+}
+
 .glide_up-enter-active,
 .glide_up-leave-active {
-	transition: all 0.25s linear;
+	@apply transition-all duration-[0.2s] ease-linear;
 }
+
 .glide_up-enter-from,
 .glide_up-leave-to {
-	opacity: 0;
-	transform: translateY(500px);
+	@apply opacity-0 translate-y-[500px];
 }
 </style>

@@ -65,15 +65,7 @@ export const useCreateProfile = () => {
 }
 
 
-const createUserProfile = async (sent_data: any) => {
-			const { data, error } = await useFetch('/api/createUserProfile', {
-    method: 'POST',
-    body: sent_data
-			})
 
-
-	return { success: data.value?.success, msg: data.value!.msg }
-}
 
 
 export const useUsername = () => {

@@ -26,6 +26,6 @@ export const useFirestore = (databaseName = '(default)'): Firestore => {
   const app = firebaseServer()!
   return getFirestore(app, databaseName)
 }
-export const db: Firestore = process.env.NODE_ENV === 'development' ? useFirestore('(default)') : useFirestore('bookings')
+export const db: Firestore = process.env.NODE_ENV === 'development' ? useFirestore('(default)') : useFirestore('connect')
 
 

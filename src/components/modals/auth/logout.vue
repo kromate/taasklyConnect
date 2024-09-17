@@ -1,11 +1,7 @@
 <template>
-	<Modal
-		modal="$atts.modal"
-		title="Sign Out"
-		:is-full-height="false"
-	>
+	<Modal modal="$atts.modal" title="Sign Out" :is-full-height="false">
 		<p class="text-dark text-lg tracking-[0.1rem] text-center">
-			Are you sure you want to sign out? s
+			Are you sure you want to sign out?
 		</p>
 
 		<div class="flex flex-col mt-5">
@@ -28,6 +24,4 @@ const { signOut, loading } = useSignin()
 
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -33,18 +33,19 @@ import GoogleIcon from '@/assets/icons/Google.vue'
 
 import { useFetchIntegrations } from '@/composables/integrations/fetch'
 import { usePageHeader } from '@/composables/utils/header'
-import { useLinkGoogleCalendar } from '@/composables/integrations/link'
+import { useLinkGoogleIntegration } from '@/composables/integrations/link'
+
 
 
 const { fetchUserIntegrations, loading: IntegrationListLoading, fetchedIntegrations, hasIntegration } = useFetchIntegrations()
 
-const { link, loading: linkGoogleCalLoading, integrationKeys } = useLinkGoogleCalendar()
+const { link, loading: linkGoogleCalLoading, integrationKeys } = useLinkGoogleIntegration()
 
 
 
 const hasGoogleCal = computed(() => {
 	if (hasIntegration(integrationKeys.google_calendar).value) {
-	const data = fetchedIntegrations.value.filter((integration) => integration.id === integrationKeys.google_calendar)
+		const data = fetchedIntegrations.value.filter((integration) => integration.id === integrationKeys.google_calendar)
 		return {
 			status: true,
 			...data[0]
@@ -63,18 +64,16 @@ fetchUserIntegrations()
 definePageMeta({
 	layout: 'dashboard',
 	middleware: ['is-authenticated', () => {
-usePageHeader().setPageHeader({
-	title: 'Integrations',
-	description: 'Connect your account with other services',
+		usePageHeader().setPageHeader({
+			title: 'Integrations',
+			description: 'Connect your account with other services',
 
-	shouldShowFab: false,
-	shouldShowTab: false
+			shouldShowFab: false,
+			shouldShowTab: false
 
-})
+		})
 	}]
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
